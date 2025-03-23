@@ -32,32 +32,45 @@ const Navbar = () => {
             <Tooltip id="my-tooltip"/>
 
             {/* Top Heading */}
-                
-            <div style={{backgroundColor: color?.primary}}>
-            <div  className="text-white text-center py-2 flex justify-between items-center w-[90%] m-auto text-sm">
-                <div className='flex items-center gap-5'>
-                    <div className='flex items-center gap-1'>
-                    <MdLocationOn className='text-xl' />
-                    <p>Uttara, Dhaka-1230, Bangladesh.</p>
-                    </div>
-                    |
+            <div style={{ backgroundColor: color?.primary }}>
+  <div className="text-white text-center py-2 flex flex-wrap justify-between items-center w-[90%] m-auto text-sm md:flex-nowrap md:text-left">
+    
+    {/* Address & Phone */}
+    <div className="flex flex-wrap items-center gap-3 md:gap-5 justify-center md:justify-start w-full md:w-auto">
+      <div className="flex items-center gap-1">
+        <MdLocationOn className="text-xl" />
+        <p>Uttara, Dhaka-1230, Bangladesh.</p>
+      </div>
+      <span className="hidden md:block">|</span>
+      <div className="flex items-center gap-1">
+        <FaMobileAlt />
+        <p>+8801713301292</p>
+      </div>
+    </div>
 
-                    <div className='flex items-center gap-1'>
-                    <FaMobileAlt />
-                    <p>+8801713301292</p>
-                    </div>
-                </div>
-                <div className='flex gap-1'>
-                    <a href="http://" target="_blank" rel="noopener noreferrer"><img src={telegram} alt="facebook" className='w-6' /></a>
-                    <a href="http://" target="_blank" rel="noopener noreferrer"><img src={instagram} alt="facebook" className='w-6' /></a>
-                    <a href="http://" target="_blank" rel="noopener noreferrer"><img src={twitter} alt="facebook" className='w-6' /></a>
-                    <a href="http://" target="_blank" rel="noopener noreferrer"><img src={linkedin} alt="facebook" className='w-6' /></a>
-                    <a href="http://" target="_blank" rel="noopener noreferrer"><img src={facebook} alt="facebook" className='w-6' /></a>
+    {/* Social Media Icons */}
+    <div className="flex gap-2 justify-center m-auto md:m-0 mt-2 md:mt-0">
+      <a href="#" target="_blank" rel="noopener noreferrer">
+        <img src={telegram} alt="telegram" className="w-6" />
+      </a>
+      <a href="#" target="_blank" rel="noopener noreferrer">
+        <img src={instagram} alt="instagram" className="w-6" />
+      </a>
+      <a href="#" target="_blank" rel="noopener noreferrer">
+        <img src={twitter} alt="twitter" className="w-6" />
+      </a>
+      <a href="#" target="_blank" rel="noopener noreferrer">
+        <img src={linkedin} alt="linkedin" className="w-6" />
+      </a>
+      <a href="#" target="_blank" rel="noopener noreferrer">
+        <img src={facebook} alt="facebook" className="w-6" />
+      </a>
+    </div>
 
-                </div>
-                
-            </div>
-            </div>
+  </div>
+</div>
+
+
 
 
 
