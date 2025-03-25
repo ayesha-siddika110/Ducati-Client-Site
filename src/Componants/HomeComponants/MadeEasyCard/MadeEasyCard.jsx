@@ -14,7 +14,7 @@ const MadeEasyCard = ({icon,firstline,secondeLine}) => {
             </div>
             <div className='space-y-2 '>
             <p className='text-center text-lg'>{firstline}</p>
-            <p className='text-gray-200 text-sm font-normal text-center'>{secondeLine}</p>
+            <p className='text-gray-200 text-base font-normal text-center'>{secondeLine}</p>
             </div>
             
         </div>
