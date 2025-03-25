@@ -7,7 +7,10 @@ const MainLayouts = () => {
     return (
         <div className='inter-font'>
             <Navbar></Navbar>
+            <div>
+
             <Outlet></Outlet>
+            </div>
         </div>
     );
 };

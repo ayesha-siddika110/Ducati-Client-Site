@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import { NavLink } from 'react-router';
 import { Tooltip } from 'react-tooltip';
 import logo from '../../assets/logo.png'
