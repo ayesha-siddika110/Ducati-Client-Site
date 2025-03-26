@@ -12,7 +12,8 @@ const Home = () => {
     return (
         <div>
             {/* Hero Slider */}
-            {/* <HeroSlider></HeroSlider> */}
+            <HeroSlider></HeroSlider>
+
             {/* Trusted Partner */}
             <TrustedPartner></TrustedPartner>
             {/* Dupati Apparels ltd */}
