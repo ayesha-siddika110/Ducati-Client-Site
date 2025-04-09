@@ -6,7 +6,7 @@ const Footer = () => {
     return (
         <div>
             <footer className="bg-[#161616] rounded-t-4xl text-white py-14">
-                <div className="w-[90%]  m-auto px-5">
+                <div className="w-[90%]  max-w-[1440px] m-auto px-5">
                     {/* Upper Section */}
                     <div className="text-center mb-10 md:flex items-center justify-between">
                         <h2 className="text-5xl font-bold md:w-[50%] text-start">Ready to streamline your fashion journey!</h2>

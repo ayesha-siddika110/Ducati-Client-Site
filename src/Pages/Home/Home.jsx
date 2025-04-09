@@ -10,7 +10,7 @@ import LatestUpdate from '../../Componants/HomeComponants/LatestUpdate/LatestUpd
 
 const Home = () => {
     return (
-        <div>
+        <div className=''>
             {/* Hero Slider */}
             <HeroSlider></HeroSlider>
 

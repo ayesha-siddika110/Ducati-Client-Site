@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
+import Marquee from "react-fast-marquee";
 
 // Import Swiper styles
 import 'swiper/css';
@@ -15,11 +16,9 @@ import img2 from "../../../assets/products/7764fb58df2dcb8930db44bb5e707471.png"
 import img3 from "../../../assets/products/008ea2391635532bb7bdc0e6b7f7d950.png"
 import img4 from "../../../assets/products/7d8be7430ad63595921754acdd8b7a62.jfif"
 import img5 from "../../../assets/products/img5.jfif"
-import Marquee from 'react-fast-marquee';
 
 const HeroSlider = () => {
 
-{/*  */}
    
 {/* <Swiper
       modules={[Autoplay]}
@@ -47,23 +46,23 @@ const HeroSlider = () => {
       ))}
     </Swiper> */}
   return (
-    <Marquee className='flex h-[500px] my-10'>
-    {[img2, img3, img4, img1,img5].map((img, index) => (
+    <Marquee direction="right" speed={50} pauseOnHover className='flex h-[500px] my-10 max-w-[1440px] m-auto'>
+    {[img3, img4, img1, img5,]?.map((img, index) => (
       <span
         key={index}
         className="overflow-hidden flex justify-center items-center"
       >
-        <img
-          src={img}
-          alt={`Slide ${index + 1}`}
-          className="transition-all duration-500 ease-in-out w-[300px] h-[500px] object-cover hover:w-[500px] hover:object-cover  pr-2 rounded-2xl"
-        />
-     
-   
+        <div className="group relative flex justify-center items-center">
+          <img
+            src={img}
+            alt={`Slide ${index + 1}`}
+            className="transition-all duration-500 ease-in-out lg:w-[320px] md:w-[280px] w-[150px] h-[500px] object-cover pr-2 rounded-2xl group-hover:w-[450px]  group-hover:z-10"
+          />
+        </div>
       </span>
-
     ))}
   </Marquee>
+  
 
   );
 };

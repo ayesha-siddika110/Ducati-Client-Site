@@ -1,0 +1,5 @@
+/* Tailwind CSS: Hide the arrows */
+.swiper-button-next,
+.swiper-button-prev {
+  display: none !important;
+}

@@ -8,7 +8,7 @@ import LatestUpdateCard from './LatestUpdateCard';
 const LatestUpdate = () => {
     return (
         <div className='bg-[#F7F7F7] my-10'>
-            <div className='py-10 w-[90%] m-auto'>
+            <div className='py-10 w-[90%] max-w-[1440px] m-auto'>
 
                 <Heading heading="Know Ducati's Latest Update" paragraph="HStay informed with our latest news, trends, and innovations. Explore new collections, industry insights, and company updates—all in one place."></Heading>
 

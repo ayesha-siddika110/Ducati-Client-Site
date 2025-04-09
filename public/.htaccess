@@ -1,0 +1,34 @@
+# Enable mod_rewrite
+RewriteEngine On
+
+# Force HTTPS (Redirect HTTP to HTTPS)
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Handle Single Page App (SPA) routing for React, Vue, etc.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.html [L]
+
+# Prevent directory listing (Hide the list of files in directories)
+Options -Indexes
+
+# Enable Gzip Compression for better performance
+AddOutputFilterByType DEFLATE text/plain text/html text/css application/x-javascript text/javascript application/javascript application/json
+
+# Set Cache-Control headers for static files to cache them on the client side
+<FilesMatch "\.(jpg|jpeg|png|gif|css|js|woff|woff2|tff|svg|eot|otf)$">
+    Header set Cache-Control "max-age=2592000, public"
+</FilesMatch>
+
+# Set Expires headers for static files for better caching
+<FilesMatch "\.(jpg|jpeg|png|gif|css|js|woff|woff2|tff|svg|eot|otf)$">
+    ExpiresActive On
+    ExpiresDefault "access plus 1 month"
+</FilesMatch>
+
+# Cache HTML files for 5 minutes (or longer depending on your needs)
+<FilesMatch "\.(html|htm)$">
+    ExpiresActive On
+    ExpiresDefault "access plus 5 minutes"
+</FilesMatch>

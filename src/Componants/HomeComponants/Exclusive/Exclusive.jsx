@@ -20,7 +20,7 @@ export default function Exclusive() {
     return (
         <div>
             <Heading heading="Experience Exclusive Quality" paragraph="Ducati apparels Ltd. 100% export-oriented readymade garments industry concern of the “Hyacinth group” that was established in 2004 is a private limited company under the registration of “the registrar of joint stock of companies & firms (RJSC)."></Heading>
-            <div className="w-[90%] m-auto">
+            <div className="w-[90%] max-w-[1440px] m-auto">
                 <div className="md:flex gap-4 p-6">
                     <div className="md:w-[50%] rounded-2xl">
                         <div className="relative rounded-2xl overflow-hidden shadow-lg">

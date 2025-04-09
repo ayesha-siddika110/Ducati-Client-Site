@@ -3,10 +3,12 @@ import { Outlet } from 'react-router';
 import Navbar from '../../Componants/Navbar/Navbar';
 import "../../index.css"
 import Footer from '../../Componants/Footer/Footer';
+import { ToastContainer } from 'react-toastify';
 
 const MainLayouts = () => {
     return (
-        <div className='inter-font max-w-[1440px] m-auto'>
+        <div className='inter-font  m-auto'>
+            <ToastContainer />
             <Navbar></Navbar>
             <div>
             <Outlet></Outlet>

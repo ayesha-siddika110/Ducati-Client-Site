@@ -5,7 +5,7 @@ import video from "../../../assets/videos/7e77d15bf5d263db0c4be3677a69f8116144ea
 const DupatiApparels = () => {
     return (
         <div className='py-10'>
-            <div className='w-[90%] m-auto'>
+            <div className='w-[90%] max-w-[1440px] m-auto'>
 
                 <Heading heading="Ducati Apparels Ltd
 " paragraph="Founded in 2004, Ducati Apparels Ltd. is at the forefront of Bangladesh’s textile industry, renowned for our commitment to quality, innovation, and integrity. We
@@ -15,7 +15,7 @@ trendsetters in fashion-woven and knitwear, crafting experiences that resonate s
 meets innovation, shaping the future of fashion with every stitch and fabric. " widthfull={true}></Heading>
 
 
-<video  height="200" width={"100%"} controls autoplay muted  className='rounded-3xl'>
+<video  height="200" width={"100%"} controls autoplay muted  className='rounded-3xl max-h-[1000px]'>
   <source src={video} type="video/mp4"/>
   Your browser does not support the video tag.
 </video>

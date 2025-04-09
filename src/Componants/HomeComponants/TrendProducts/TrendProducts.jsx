@@ -8,7 +8,7 @@ import ProductCard from '../ProductCard/ProductCard';
 const TrendProducts = () => {
     return (
         <div className='bg-[#F7F7F7] my-10'>
-            <div className='py-10 w-[90%] m-auto'>
+            <div className='py-10 w-[90%] max-w-[1440px]  m-auto'>
 
                 <Heading heading="On-Trend Clothing Products" paragraph="High Specifications from Start to End"></Heading>
 

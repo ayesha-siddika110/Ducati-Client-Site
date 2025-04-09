@@ -7,3 +7,35 @@
   font-family: "Inter", sans-serif;
   font-style: normal;
 }
+
+/* src/index.css */
+
+/* Chrome, Edge, Safari */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f0f0f0;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #6ae4a5; /* your custom color */
+  border-radius: 10px;
+  border: 2px solid #f0f0f0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #6ae4a5;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #00A651 #f0f0f0;
+}
+
+/* Optional smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
