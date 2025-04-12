@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Marquee from "react-fast-marquee";
@@ -6,6 +6,7 @@ import Marquee from "react-fast-marquee";
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
+import './herosilder.css'
 
 
 
@@ -18,8 +19,18 @@ import img4 from "../../../assets/products/7d8be7430ad63595921754acdd8b7a62.jfif
 import img5 from "../../../assets/products/img5.jfif"
 
 const HeroSlider = () => {
+  const images = [img1, img2,img3, img4, img5]; // Array of image URLs
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const totalImages = [img3, img4,].length;
 
-   
+  // Auto slide with interval
+  useEffect(() => {
+    const slideInterval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % totalImages);
+    }, 3000); // Change every 3 seconds
+
+    return () => clearInterval(slideInterval); // Cleanup interval when component unmounts
+  }, [totalImages]);
 {/* <Swiper
       modules={[Autoplay]}
       slidesPerView={3.4}  // ডিফল্টভাবে ৩-৪ টা ইমেজ দেখাবে
@@ -45,25 +56,53 @@ const HeroSlider = () => {
         </SwiperSlide>
       ))}
     </Swiper> */}
+    const renderImages = (repeatCount = 3) => {
+      const repeatedImages = [];
+      for (let i = 0; i < repeatCount; i++) {
+        images.forEach((img, index) => {
+          repeatedImages.push(
+            <div
+              key={`${i}-${index}`}
+              className="flex-shrink-0 md:w-[320px] w-[200px] hover:w-[320px] md:hover:w-[450px]  transition-all duration-500 ease-in-out h-[500px]"
+            >
+              <img
+                src={img}
+                alt={`Slide ${i}-${index}`}
+                className="w-full h-full  object-cover rounded-2xl"
+              />
+            </div>
+          );
+        });
+      }
+      return repeatedImages;
+    };
   return (
-    <Marquee direction="right" speed={50} pauseOnHover className='flex h-[500px] my-10 max-w-[1440px] m-auto'>
-    {[img3, img4, img1, img5,]?.map((img, index) => (
-      <span
-        key={index}
-        className="overflow-hidden flex justify-center items-center"
-      >
-        <div className="group relative flex justify-center items-center">
-          <img
-            src={img}
-            alt={`Slide ${index + 1}`}
-            className="transition-all duration-500 ease-in-out lg:w-[320px] md:w-[280px] w-[150px] h-[500px] object-cover pr-2 rounded-2xl group-hover:w-[450px]  group-hover:z-10"
-          />
-        </div>
-      </span>
-    ))}
-  </Marquee>
-  
-
+<div className="overflow-hidden  w-full h-[500px]">
+      <div className="flex animate-marquee gap-4 ">
+        {/* Original images */}
+        {/* {images.map((img, index) => (
+          <div key={index} className="flex-shrink-0 w-[250px] transition-all duration-500 ease-in-out hover:w-[450px] h-[500px]">
+            <img
+              src={img}
+              alt={`Slide ${index + 1}`}
+              className="w-full h-full object-cover rounded-2xl"
+            />
+          </div>
+        ))} */}
+        {/* Duplicate images for seamless loop */}
+        {/* {images.map((img, index) => (
+          <div key={`duplicate-${index}`} className="flex-shrink-0 w-[250px] hover:w-[450px] transition-all duration-500 ease-in-out h-[500px]">
+            <img
+              src={img}
+              alt={`Slide ${index + 1}`}
+              className="w-full h-full object-cover rounded-2xl"
+            />
+          </div>
+        ))} */}
+        {renderImages(4)}
+       
+      </div>
+    </div>
   );
 };
 

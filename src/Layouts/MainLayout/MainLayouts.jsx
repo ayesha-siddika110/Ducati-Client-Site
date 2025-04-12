@@ -7,7 +7,7 @@ import { ToastContainer } from 'react-toastify';
 
 const MainLayouts = () => {
     return (
-        <div className='inter-font  m-auto'>
+        <div className='inter-font'>
             <ToastContainer />
             <Navbar></Navbar>
             <div>

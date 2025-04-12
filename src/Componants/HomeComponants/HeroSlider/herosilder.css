@@ -1,0 +1,16 @@
+/* Tailwind CSS: add this to your global styles or in your CSS file */
+
+@keyframes marquee {
+    0% {
+      transform: translateX(0); /* Start from the leftmost */
+    }
+    100% {
+      transform: translateX(-50%); /* Move the images left, allowing a seamless loop */
+    }
+  }
+  
+  .animate-marquee {
+    display: flex;
+    animation: marquee 20s linear infinite; /* Control speed here by adjusting 30s */
+  }
+  

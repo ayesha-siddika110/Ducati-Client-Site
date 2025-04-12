@@ -1,35 +1,37 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router';
-import { Tooltip } from 'react-tooltip';
+
 import logo from '../../assets/logo.png'
 import PrimaryButton from '../Button/PrimaryButton';
 import useTheme from '../../Hooks/useTheme';
-import { FaMobileAlt } from "react-icons/fa";
+import { FaMobileAlt, FaUsersCog } from "react-icons/fa";
 import { MdLocationOn } from "react-icons/md";
 import telegram from "../../assets/logos/icons8-telegram-48.png"
 import instagram from "../../assets/logos/icons8-instagram-48.png"
 import twitter from "../../assets/logos/icons8-twitter-bird-48.png"
 import linkedin from "../../assets/logos/icons8-linkedin-48.png"
 import facebook from "../../assets/logos/icons8-facebook-48 (1).png"
+import useAuth from '../../Hooks/useAuth';
+import Tooltip from '../Share/Tooltip';
+import './Navbar.css'
+
 
 const Navbar = () => {
   const { color } = useTheme()
+  const { user } = useAuth()
   const links = <>
     <NavLink to="/" className="">Home</NavLink>
-    <NavLink to="/" className="">About Us</NavLink>
-    <NavLink to="/" className="">Product</NavLink>
-    <NavLink to="/" className="">Clients</NavLink>
-    <NavLink to="/" className="">Gellery</NavLink>
-    <NavLink to="/" className="">Blogs</NavLink>
-    <NavLink to="/" className="">Archive</NavLink>
-    <NavLink to="/" className="">Webmail</NavLink>
+    <NavLink to="/aboutUs" className="">About Us</NavLink>
+    <NavLink to="/allProducts" className="">Products</NavLink>
+    <NavLink to="/Clients" className="">Clients</NavLink>
+    <NavLink to="/gellary" className="">Gellery</NavLink>
+    <NavLink to="/blogs" className="">Blogs</NavLink>
+    <NavLink to="/webmail" className="">Webmail</NavLink>
   </>
 
   return (
     <div>
-      <div className="roboto-font   dark:bg-gray-900 dark:text-white">
-        <Tooltip id="my-tooltip" />
-
+      <div className="">
         {/* Top Heading */}
         <div style={{ backgroundColor: color?.primary }}>
           <div className="text-white text-center py-2 flex flex-wrap justify-between items-center w-[90%] m-auto text-sm md:flex-nowrap md:text-left">
@@ -69,12 +71,8 @@ const Navbar = () => {
           </div>
         </div>
 
-
-
-
-
         {/* Middle Navbar */}
-        <nav className=" bg-[#F5F5F5] text-[#070707] dark:bg-gray-900 dark:text-white  py-2">
+        <nav className=" bg-[#F5F5F5] text-[#070707] py-2">
           <div className="flex justify-between w-[90%] items-center mx-auto">
             <div className='md:w-[20%]'>
               <img src={logo} alt="Logo" className='h-[60px]' />
@@ -96,7 +94,7 @@ const Navbar = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" />
                   </svg>
                 </div>
-                <ul tabIndex={0} className="menu menu-sm dropdown-content bg-white text-[#070707] rounded-box z-[50] mt-3 w-52 flex flex-col space-y-3 p-4 text-[14px] shadow text-center">
+                <ul tabIndex={0} className="menu menu-sm dropdown-content bg-white text-[#070707] rounded-box z-[50] w-52 flex flex-col space-y-3 p-4 text-[14px] shadow text-center">
                   {links}
                 </ul>
               </div>
@@ -105,7 +103,16 @@ const Navbar = () => {
 
               <PrimaryButton text={"Let's Talk"}></PrimaryButton>
               {/* Login */}
-              <Link to="/login"><PrimaryButton text={"Login"}></PrimaryButton></Link>
+              {
+                user ? <Link to="dashboard"><Tooltip text="dashboard">
+                <FaUsersCog className='text-2xl' />
+                </Tooltip></Link>
+                : 
+                <Link to="/login"><PrimaryButton text={"Login"}></PrimaryButton></Link>
+              }
+              {/* Theme Toggle */}
+              
+
 
 
 
