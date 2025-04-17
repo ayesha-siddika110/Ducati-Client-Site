@@ -4,9 +4,8 @@ import { useEffect } from "react";
 import useAuth from "./useAuth";
 
 const axiosSecure = axios.create({
-//   baseURL: "https://api.kaziagritech.com", 
-    baseURL: 'http://localhost:3000'
-    // baseURL: 'https://kazi-agri-tech-server-site.vercel.app'//
+    // baseURL: 'http://localhost:3000'
+    baseURL: 'https://apigarments.artisandesign.xyz'//
 });
 
 const useAxiosSecure = () => {

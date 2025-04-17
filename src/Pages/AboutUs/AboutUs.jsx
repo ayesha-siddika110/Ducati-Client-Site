@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import img1 from '../../assets/products/img3.jfif'
 import WhyChooseUs from '../../Componants/HomeComponants/AboutUsComponant/WhyChooseUs';
 import ContactServices from '../../Componants/HomeComponants/AboutUsComponant/ContactService';
+import { Link } from 'react-router';
 
 const AboutUs = () => {
     const { color } = useTheme()
@@ -37,9 +38,9 @@ const AboutUs = () => {
                         go-to-market teams use Vidyard’s AI-powered video messaging, video hosting, and
                         digital sales rooms to connect with more prospects and generate more revenue.
                     </p>
-                    <button style={{backgroundColor: color?.primary}} className="bg-blue-600 text-white px-6 py-3 rounded-md font-semibold hover:bg-blue-700 transition">
-                        Sign Up for Free
-                    </button>
+                    <Link to="/allProducts"><button style={{backgroundColor: color?.primary}} className="bg-blue-600 text-white px-6 py-3 rounded-md font-semibold hover:bg-blue-700 transition">
+                        View Products
+                    </button></Link>
                 </div>
 
                 {/* Right Image + Decorations */}

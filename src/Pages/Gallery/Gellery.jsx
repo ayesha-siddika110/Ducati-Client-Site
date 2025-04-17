@@ -1,5 +1,5 @@
 
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 import Captions from "yet-another-react-lightbox/plugins/captions";
@@ -11,8 +11,8 @@ import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import "yet-another-react-lightbox/plugins/captions.css";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
 import useTheme from '../../Hooks/useTheme';
-// import './gallary.css'
-
+import PhotoAlbum from "react-photo-album";
+import "yet-another-react-lightbox/styles.css";
 const gellery = () => {
     const {color} = useTheme()
   
@@ -85,17 +85,75 @@ const gellery = () => {
         <div className={`absolute inset-0 bg-white flex flex-col justify-center items-center text-center p-4 transition-all duration-300 ${image ? "bg-opacity-90 opacity-0 group-hover:opacity-100" : ""}`}>
           <h3 className="text-xl font-semibold">{title}</h3>
           <p className="text-sm mt-2">{text}</p>
-          <button className="mt-4 px-4 py-2 border-2 border-black text-black rounded-full hover:bg-black hover:text-white transition">
+          <p className="mt-4 px-4 py-2   transition  text-lg font-semibold uppercase">
+            product name
+          </p>
+          {/* <button className="mt-4 px-4 py-2 border-2 border-black text-black rounded-full hover:bg-black hover:text-white transition">
             Read More
-          </button>
+          </button> */}
         </div>
       </div>
     );
   };
 
+  const photos = [
+    {
+      src: "https://res.cloudinary.com/dvribl8s2/image/upload/v1744631073/acxwti26hxpw3t6nqdgu.png",
+      width: 800,
+      height: 600,
+      title: "Beautiful Forest",
+    },
+    {
+      src: "https://res.cloudinary.com/dvribl8s2/image/upload/v1744629875/wsqjc2j5ms2cskyuv4m2.jpg",
+      width: 800,
+      height: 800,
+      title: "Mountain View",
+    },
+    {
+      src: "https://res.cloudinary.com/dvribl8s2/image/upload/v1744628919/cld-sample-5.jpg",
+      width: 600,
+      height: 800,
+      title: "Lake Reflection",
+    },
+    {
+      src: "https://res.cloudinary.com/dvribl8s2/image/upload/v1744628919/samples/woman-on-a-football-field.jpg",
+      width: 700,
+      height: 500,
+      title: "Sunset Glow",
+    },
+    {
+      src: "https://res.cloudinary.com/dvribl8s2/image/upload/v1744628918/samples/chair.png",
+      width: 1000,
+      height: 700,
+      title: "Hiking Trail",
+    },
+  ];
+  const [index, setIndex] = useState(-1);
+  
+
   return (
     <div className="">
-       <div className="h-16"></div>
+
+       <div className="max-w-6xl mx-auto p-4">
+
+
+      <PhotoAlbum
+        layout="rows"
+        photos={photos}
+        spacing={10}
+        onClick={({ index }) => setIndex(index)}
+      />
+
+      <Lightbox
+        open={index >= 0}
+        index={index}
+        close={() => setIndex(-1)}
+        slides={photos.map((photo) => ({
+          src: photo.src,
+          title: photo.title,
+        }))}
+      />
+    </div>
       {/* <div style={{
         backgroundImage: `url(${banner})`,
         backgroundSize: 'cover',

@@ -20,13 +20,13 @@ const Navbar = () => {
   const { color } = useTheme()
   const { user } = useAuth()
   const links = <>
-    <NavLink to="/" className="">Home</NavLink>
-    <NavLink to="/aboutUs" className="">About Us</NavLink>
-    <NavLink to="/allProducts" className="">Products</NavLink>
-    <NavLink to="/Clients" className="">Clients</NavLink>
-    <NavLink to="/gellary" className="">Gellery</NavLink>
-    <NavLink to="/blogs" className="">Blogs</NavLink>
-    <NavLink to="/webmail" className="">Webmail</NavLink>
+    <NavLink to="/" className="py-2 px-2 rounded-lg">Home</NavLink>
+    <NavLink to="/aboutUs" className="py-2 px-2 rounded-lg">About Us</NavLink>
+    <NavLink to="/allProducts" className="py-2 px-2 rounded-lg">Products</NavLink>
+    <NavLink to="/Clients" className="py-2 px-2 rounded-lg">Clients</NavLink>
+    <NavLink to="/gellary" className="py-2 px-2 rounded-lg">Gellery</NavLink>
+    <NavLink to="/blogs" className="py-2 px-2 rounded-lg">Blogs</NavLink>
+    <NavLink to="/contact" className="py-2 px-2 rounded-lg">Contact Us</NavLink>
   </>
 
   return (

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import ProductCard from '../../Componants/HomeComponants/ProductCard/ProductCard';
 import img from '../../assets/products/img3.jfif'
+import HeadingPara from '../../Componants/Share/HeadingPara';
 const Products = () => {
     const [searchTerm, setSearchTerm] = useState("");
     const [filter, setFilter] = useState("all");
@@ -118,10 +119,7 @@ const Products = () => {
     return (
         <div className='bg-[#F7F7F7]'>
             <div className='w-[90%] max-w-[1440px] m-auto'>
-                <div className='py-10  text-center'>
-                    <h1 className='text-4xl text-center '>Special offers for selling</h1>
-                    <p className='w-[60%] m-auto text-gray-600'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo libero dolor vitae enim ipsum delectus dolore harum rem magnam deleniti. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Error, possimus.</p>
-                </div>
+               <HeadingPara heading={"Special offers for selling"} para={"Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo libero dolor vitae enim ipsum delectus dolore harum rem magnam deleniti. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Error, possimus."}></HeadingPara>
                 {/* search and filter */}
                 <div className="  py-10 rounded-lg  flex flex-col md:flex-row items-center gap-4">
                     {/* Search Bar */}

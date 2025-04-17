@@ -20,7 +20,7 @@ const DashboardLayout = () => {
                 <DashboardHeader />
             </Suspense> */}
 
-            <div className="min-h-[85vh] dark:bg-gray-900 dark:text-white">
+            <div className="min-h-[85vh] ">
                 {/* Outlet remains as is */}
                 <Outlet />
             </div>

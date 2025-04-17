@@ -11,6 +11,9 @@ import Products from "../Pages/Products/Products";
 import Clients from "../Pages/Clients/Clients";
 import Gellery from "../Pages/Gallery/Gellery"
 import Blogs from "../Pages/Blogs/Blogs";
+import ContactPage from "../Pages/ContactPage/ContactPage";
+import BlogDetailsPage from "../Pages/BlogDetailsPage/BlogDetailsPage";
+import AddProduct from "../Pages/Dashboard/SuperAdminDashboard/AddProduct/AddProduct";
 
 const Router = () => {
     return <Routes>
@@ -24,9 +27,12 @@ const Router = () => {
             <Route path="gellary" element={<Gellery />} />
             <Route path="Clients" element={<Clients />} />
             <Route path="blogs" element={<Blogs />} />
+            <Route path="contact" element={<ContactPage />} />
+            <Route path="blogDetailsPage" element={<BlogDetailsPage />} />
         </Route>
-
-        <Route path="/dashboard" element={<DashboardLayout />} />
+        <Route path="/dashboard" element={<DashboardLayout />} >
+            <Route path="/dashboard/addProducts" element={<AddProduct />} />
+        </Route>
 
         <Route path="*" element={<ErrorPage />} />
     </Routes>

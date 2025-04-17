@@ -1,5 +1,6 @@
 import React, { useCallback } from "react";
 import useTheme from "../../Hooks/useTheme";
+import { Link } from "react-router";
 
 const articles = [
   {
@@ -41,14 +42,50 @@ const rightArticles = [
   }
 ];
 
-const Blogs =()=> {
-    const {color} = useTheme()
-  const handleReadArticle = useCallback((title) => {
-    alert(`Reading article: ${title}`);
-  }, []);
+const Blogs = () => {
+  const { color } = useTheme()
+  // const handleReadArticle = useCallback((title) => {
+  //   alert(`Reading article: ${title}`);
+  // }, []);
 
   return (
-    <div className="container mx-auto px-4 py-10 grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div>
+      <div className="container mx-auto px-4 py-10 grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="md:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6">
+          {articles.map((item, index) => (
+            <div
+              key={index}
+              className="rounded-xl shadow-md overflow-hidden flex flex-col"
+            >
+              <img src={item.image} alt={item.title} className="h-48 w-full object-cover" />
+              <div className="p-4 flex-1 flex flex-col justify-between">
+                <div>
+                  <h3 className="text-lg font-bold text-gray-800 mb-2">{item.title}</h3>
+                  <p className="text-sm text-gray-600 mb-4">{item.description}</p>
+                </div>
+                <Link to="/blogDetailsPage"><button
+                   style={{ borderColor: color?.primary, color: color?.primary }}
+                  className="mt-auto px-4 py-2 border  font-semibold rounded-md hover:bg-pink-50 w-fit"
+                >
+                  Read more
+                </button></Link>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="space-y-6">
+          {rightArticles.map((item, index) => (
+            <div key={index}>
+              <h4 className="text-md font-bold text-gray-800 mb-2">{item.title}</h4>
+              <p className="text-sm text-gray-600 mb-1">{item.description}</p>
+              <a href="#" style={{ color: color?.primary }} className="text-sm font-semibold">
+                {item.link}
+              </a>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="container mx-auto px-4 py-10 grid grid-cols-1 md:grid-cols-3 gap-8">
       <div className="md:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6">
         {articles.map((item, index) => (
           <div
@@ -61,12 +98,12 @@ const Blogs =()=> {
                 <h3 className="text-lg font-bold text-gray-800 mb-2">{item.title}</h3>
                 <p className="text-sm text-gray-600 mb-4">{item.description}</p>
               </div>
-              <button
-                onClick={() => handleReadArticle(item.title)} style={{borderColor: color?.primary, color: color?.primary}}
-                className="mt-auto px-4 py-2 border  font-semibold rounded-md hover:bg-pink-50 w-fit"
-              >
-                Read more
-              </button>
+              <Link to="/blogDetailsPage"><button
+                  style={{ borderColor: color?.primary, color: color?.primary }}
+                  className="mt-auto px-4 py-2 border  font-semibold rounded-md hover:bg-pink-50 w-fit"
+                >
+                  Read more
+                </button></Link>
             </div>
           </div>
         ))}
@@ -82,6 +119,44 @@ const Blogs =()=> {
           </div>
         ))}
       </div>
+    </div>
+    <div className="container mx-auto px-4 py-10 grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="md:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6">
+        {articles.map((item, index) => (
+          <div
+            key={index}
+            className="rounded-xl shadow-md overflow-hidden flex flex-col"
+          >
+            <img src={item.image} alt={item.title} className="h-48 w-full object-cover" />
+            <div className="p-4 flex-1 flex flex-col justify-between">
+              <div>
+                <h3 className="text-lg font-bold text-gray-800 mb-2">{item.title}</h3>
+                <p className="text-sm text-gray-600 mb-4">{item.description}</p>
+              </div>
+              <Link to="/blogDetailsPage"><button
+                   style={{ borderColor: color?.primary, color: color?.primary }}
+                  className="mt-auto px-4 py-2 border  font-semibold rounded-md hover:bg-pink-50 w-fit"
+                >
+                  Read more
+                </button></Link>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div className="space-y-6">
+        {rightArticles.map((item, index) => (
+          <div key={index}>
+            <h4 className="text-md font-bold text-gray-800 mb-2">{item.title}</h4>
+            <p className="text-sm text-gray-600 mb-1">{item.description}</p>
+            <Link to="/blogDetailsPage">
+            <p style={{color: color?.primary}} className="text-sm font-semibold">
+              {item.link}
+            </p>
+            </Link>
+          </div>
+        ))}
+      </div>
+    </div>
     </div>
   );
 }
