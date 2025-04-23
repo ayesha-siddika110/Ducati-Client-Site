@@ -17,9 +17,11 @@ import img2 from "../../../assets/products/7764fb58df2dcb8930db44bb5e707471.png"
 import img3 from "../../../assets/products/008ea2391635532bb7bdc0e6b7f7d950.png"
 import img4 from "../../../assets/products/7d8be7430ad63595921754acdd8b7a62.jfif"
 import img5 from "../../../assets/products/img5.jfif"
+import useAdvertise from '../../../Hooks/useAdvertise';
 
 const HeroSlider = () => {
-  const images = [img1, img2,img3, img4, img5]; // Array of image URLs
+  const [advertise,isLoading,refetch] = useAdvertise()
+  const images = advertise?.map((item,index)=>  item?.images) // Array of image URLs
   const [currentIndex, setCurrentIndex] = useState(0);
   const totalImages = [img3, img4,].length;
 

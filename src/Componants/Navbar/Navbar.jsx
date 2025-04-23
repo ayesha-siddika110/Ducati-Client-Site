@@ -24,7 +24,7 @@ const Navbar = () => {
     <NavLink to="/aboutUs" className="py-2 px-2 rounded-lg">About Us</NavLink>
     <NavLink to="/allProducts" className="py-2 px-2 rounded-lg">Products</NavLink>
     <NavLink to="/Clients" className="py-2 px-2 rounded-lg">Clients</NavLink>
-    <NavLink to="/gellary" className="py-2 px-2 rounded-lg">Gellery</NavLink>
+    <NavLink to="/gellary" className="py-2 px-2 rounded-lg">Gallery</NavLink>
     <NavLink to="/blogs" className="py-2 px-2 rounded-lg">Blogs</NavLink>
     <NavLink to="/contact" className="py-2 px-2 rounded-lg">Contact Us</NavLink>
   </>
@@ -75,7 +75,7 @@ const Navbar = () => {
         <nav className=" bg-[#F5F5F5] text-[#070707] py-2">
           <div className="flex justify-between w-[90%] items-center mx-auto">
             <div className='md:w-[20%]'>
-              <img src={logo} alt="Logo" className='h-[60px]' />
+              <Link to="/"><img src={logo} alt="Logo" className='h-[60px]' /></Link>
             </div>
 
             {/* Desktop Navigation */}

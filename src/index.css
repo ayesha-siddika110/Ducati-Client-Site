@@ -30,6 +30,9 @@
 }
 
 /* Firefox */
+.ql-editor {
+  @apply min-h-[250px];
+}
 * {
   scrollbar-width: thin;
   scrollbar-color: #00A651 #f0f0f0;

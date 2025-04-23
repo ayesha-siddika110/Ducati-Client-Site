@@ -1,5 +1,7 @@
 // utils/uploadToCloudinary.js
 
+import { toast } from "react-toastify";
+
 export const uploadToCloudinary = async (file) => {
     const CLOUD_NAME = import.meta.env.VITE_cloud_name; // ⬅️ Replace
     const UPLOAD_PRESET = import.meta.env.VITE_Preset; // ⬅️ Replace
@@ -18,7 +20,7 @@ export const uploadToCloudinary = async (file) => {
       if (data.secure_url) {
         return data.secure_url;
       } else {
-        throw new Error('Image upload failed');
+        return toast.error('Image upload failed, please try again');
       }
     } catch (error) {
       console.error('Cloudinary upload error:', error);

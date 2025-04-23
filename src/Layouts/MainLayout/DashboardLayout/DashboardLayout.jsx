@@ -1,10 +1,24 @@
 import React, { Suspense } from 'react';
 import { Outlet } from 'react-router';
 import DashboardSideBar from '../../../DashboardNav/DashboardSideBar';
+import { ToastContainer } from 'react-toastify';
 
 const DashboardLayout = () => {
     return (
         <div className="flex">
+            <ToastContainer
+  position="top-right"
+  autoClose={false}
+  hideProgressBar={false}
+  newestOnTop={false}
+  closeOnClick
+  rtl={false}
+  pauseOnFocusLoss
+  draggable
+  pauseOnHover
+  theme="dark"
+/>
+
 
         <div className="hidden md:flex">
            

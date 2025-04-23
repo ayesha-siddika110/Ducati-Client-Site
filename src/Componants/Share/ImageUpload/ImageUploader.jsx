@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { uploadToCloudinary } from './uploadToCloudinary';
+import { toast } from 'react-toastify';
 
 const ImageUploader = () => {
   const [imageUrls, setImageUrls] = useState([]);
@@ -18,7 +19,7 @@ const ImageUploader = () => {
       }
       setImageUrls((prev) => [...prev, ...uploadedUrls]);
     } catch (err) {
-      alert('Upload failed');
+      toast.error('Upload failed. please try again');
     }
     setUploading(false);
   };
